@@ -1,0 +1,26 @@
+{
+  "name": "@example/minimal",
+  "type": "module",
+  "version": "0.0.1",
+  "private": true,
+  "browserslist": [
+    "defaults"
+  ],
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^1.6.10",
+    "astro-icon": "^0.8.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.13",
+    "open-props": "^1.4.25",
+    "postcss": "^8.4.19",
+    "postcss-jit-props": "^1.0.7"
+  }
+}
