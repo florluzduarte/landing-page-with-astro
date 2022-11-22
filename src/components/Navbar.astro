@@ -29,18 +29,18 @@ const navLinks = [
     <Icon name="Logo" width={225} class="logo" />
     <div class="nav-wrapper">
       <button
-        class="btn menu--btn"
+        class="btn btn--menu"
         id="menu-btn"
         aria-expanded="false"
         aria-label="Open mobile nav"
       >
         <Icon name="feather:menu" width={24} />
       </button>
-      <ul class="nav-links">
+      <ul class="nav-links" role="navigation">
         {
           navLinks.map((link) => (
             <li role="none">
-              <a href={link.url} class="btn btn--${link.style} nav-link">
+              <a href={link.url} class={`btn btn--${link.style} nav-link`}>
                 {link.name}
               </a>
             </li>
@@ -53,7 +53,6 @@ const navLinks = [
 
 <script>
   const navBtn = document.querySelector("#menu-btn");
-  const navLinks = document.querySelectorAll(".nav-link");
   navBtn.addEventListener("click", () => {
     navBtn.setAttribute(
       "aria-expanded",

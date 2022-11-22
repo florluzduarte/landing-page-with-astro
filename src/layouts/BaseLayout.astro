@@ -1,6 +1,6 @@
 ---
 import Navbar from "../components/Navbar.astro";
-
+import "../styles/global.css";
 const { title = "Astro Tutorial" } = Astro.props;
 ---
 
@@ -13,13 +13,15 @@ const { title = "Astro Tutorial" } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-    <Navbar />
-    <main>
-      <slot />
-    </main>
-    <footer>
-      <small>Copyright © <span id="copyrightYear"></span> Desgn</small>
-    </footer>
+    <div class="wrapper">
+      <Navbar />
+      <main>
+        <slot />
+      </main>
+      <footer class="blur">
+        <small>Copyright © <span id="copyrightYear"></span> Desgn</small>
+      </footer>
+    </div>
     <script>
       document.querySelector("#copyrightYear").textContent = new Date()
         .getFullYear()
