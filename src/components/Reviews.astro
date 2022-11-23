@@ -1,0 +1,66 @@
+---
+import reviews from "../data/reviews.json";
+import { Icon } from "astro-icon";
+---
+
+<section class="reviews--wrapper blur">
+  <h2 class="sr-only">Reviews</h2>
+  <div class="reviews-container container-xs">
+    <button
+      class="reviews-btn grid-sm review-btn--prev"
+      id="prev"
+      aria-label="Previous review"
+    >
+      <Icon name="feather:chevron-left" width="50" />
+    </button>
+
+    <div class="reviews">
+      {
+        reviews.slice(reviews.length - 1).map((review) => (
+          <div class="review grid-sm">
+            <img src={review.avatar} alt={review.name} class="review-avatar" />
+            <p class="review-content">{review.content}</p>
+            <p class="review-name text-gradient h3">{review.name}</p>
+          </div>
+        ))
+      }
+      {
+        reviews.map((review) => (
+          <div class="review grid-sm">
+            <img src={review.avatar} alt={review.name} class="review-avatar" />
+            <p class="review-content">{review.content}</p>
+            <p class="review-name text-gradient h3">{review.name}</p>
+          </div>
+        ))
+      }
+      {
+        reviews.slice(0, 1).map((review) => (
+          <div class="review grid-sm">
+            <img src={review.avatar} alt={review.name} class="review-avatar" />
+            <p class="review-content">{review.content}</p>
+            <p class="review-name text-gradient h3">{review.name}</p>
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="indicator-container">
+      {
+        reviews.map((review) => (
+          <button class={`indicator ${review?.active && "active"}`} />
+        ))
+      }
+    </div>
+    <button
+      class="reviews-btn grid-sm review-btn--next"
+      id="next"
+      aria-label="Next review"
+    >
+      <Icon name="feather:chevron-right" width="50" />
+    </button>
+  </div>
+</section>
+
+<script>
+  import "../js/reviews";
+</script>
