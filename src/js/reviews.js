@@ -1,7 +1,7 @@
 //Variables
 
 const reviewSlider = document.querySelector(".reviews");
-const reviewBtns = document.querySelectorAll(".reviews-btn");
+const reviewBtns = document.querySelectorAll(".review-btn");
 const reviews = [...document.querySelectorAll(".review")];
 const indicators = [...document.querySelectorAll(".indicator")];
 let isMoving;
@@ -58,10 +58,14 @@ reviewBtns.forEach((btn) => {
   btn.addEventListener("click", handleReviewBtnClick);
 });
 
+// Este event listener trabaja en conjunto con los botones circulares del
+// slider para que podamos seleccionar la review que queremos ver
 indicators.forEach((ind) => {
   ind.addEventListener("click", handleIndicatorClick);
 });
 
+// Esto trabaja con el movimiento lateral del slider y también ajusta
+// el tiempo de transición para las reviews duplicadas del principio y final
 reviewSlider.addEventListener("transitionend", () => {
   isMoving = false;
   if (currentIndex === 0) {
