@@ -4,6 +4,10 @@
 
 Este proyecto fue desarrollado con la intención de aprender cómo funciona Astro (static-site-generator).
 
+## Sitio final
+
+Visita el resultado final en: https://flor-astro-1.netlify.app/
+
 ## En el camino aprendí muchas cosas como:
 
 - La forma de estructurar y organizar archivos dentro de este framework
